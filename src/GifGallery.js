@@ -8,6 +8,7 @@ class GifGallery extends Component {
     this.state = {
       gifs: [],
       offset: 0,
+      selected: null,
     }
 
     this.getTrending = this.getTrending.bind(this);
@@ -17,7 +18,8 @@ class GifGallery extends Component {
     fetch(`http://api.giphy.com/v1/gifs/trending?api_key=ErgAmxc7tbRDVkRNPuvIuLoNd3mJWW3B&limit=5&offset=${offset}`)
       .then(response => (
         response.json()
-      )).then(json => {
+      ))
+      .then(json => {
         let {
           gifs,
           offset,
@@ -31,6 +33,10 @@ class GifGallery extends Component {
           offset: nextOffset,
         });
       })
+      .catch(error => {
+        console.error('error: ', error);
+      }) 
+
   }
 
 

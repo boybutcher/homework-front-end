@@ -1,0 +1,10 @@
+.Thumbnail {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 2px solid grey;
+  margin: 2px;
+  cursor: pointer;
+}

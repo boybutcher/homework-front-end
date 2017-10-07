@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Thumbnail.css';
 
 class Thumbnail extends Component {
   
@@ -10,9 +11,14 @@ class Thumbnail extends Component {
       index,
     } = this.props;
 
+    let thumbnailImage = {
+      backgroundImage: `url('${gif.images.preview_gif.url}')`,
+    }
+
+    console.log('thumbnailImage: ', thumbnailImage);
+
     return (
-      <span className='Thumbnail' key={index}>
-        <img src={gif.images.preview_gif.url} />
+      <span className='Thumbnail' key={index} style={thumbnailImage}>
       </span>
     )
   }
