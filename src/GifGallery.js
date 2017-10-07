@@ -56,6 +56,11 @@ class GifGallery extends Component {
 
     return (
       <div className="GifGallery">
+        <div>
+          <button onClick={() => this.getTrending(this.state.offset)}>
+            more images
+          </button>
+        </div>
         {gifs.map((gif, index) => (
           <Thumbnail 
             gif={gif} 
