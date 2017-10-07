@@ -4,21 +4,22 @@ import './Thumbnail.css';
 class Thumbnail extends Component {
   
   render() {
-    console.log('this.props: ', this.props);
-    
     let {
       gif,
       index,
+      selectImage,
     } = this.props;
 
     let thumbnailImage = {
       backgroundImage: `url('${gif.images.preview_gif.url}')`,
     }
 
-    console.log('thumbnailImage: ', thumbnailImage);
-
     return (
-      <span className='Thumbnail' key={index} style={thumbnailImage}>
+      <span 
+        className='Thumbnail' 
+        style={thumbnailImage}
+        onClick={() => selectImage(index)}
+      >
       </span>
     )
   }

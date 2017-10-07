@@ -11,7 +11,14 @@ class GifGallery extends Component {
       selected: null,
     }
 
+    this.selectImage = this.selectImage.bind(this);
     this.getTrending = this.getTrending.bind(this);
+  }
+
+  selectImage(index) {
+    this.setState({
+      selected: index,
+    })
   }
 
   getTrending(offset = 0) {
@@ -36,9 +43,7 @@ class GifGallery extends Component {
       .catch(error => {
         console.error('error: ', error);
       }) 
-
   }
-
 
   componentDidMount() {
     this.getTrending(this.state.offset);
@@ -52,7 +57,12 @@ class GifGallery extends Component {
     return (
       <div className="GifGallery">
         {gifs.map((gif, index) => (
-          <Thumbnail gif={gif} index={index} />
+          <Thumbnail 
+            gif={gif} 
+            key={index}
+            index={index}
+            selectImage={this.selectImage} 
+          />
         ))}
       </div>
     );
