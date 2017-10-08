@@ -3,16 +3,6 @@ import InfoPanel from './InfoPanel';
 import '../styles/Modal.css';
 
 class Modal extends Component {
-  constructor(props) {
-    super(props);
-
-    this.preventClose = this.preventClose.bind(this);
-  }
-
-  preventClose(e) {
-    e.stopPropagation();
-  }
-
   render() {
     const {
       modalOpen,
@@ -20,13 +10,13 @@ class Modal extends Component {
       selectedImage
     } = this.props;
 
-    const displayed = selectedImage ? {
+    const imageStyle = selectedImage ? {
       backgroundImage: `url('${selectedImage.images.original.url}')`
     } : null;
 
     const modal = (
       <div className='Modal' onClick={() => toggleModal()}>
-        <span className='selectedImage' style={displayed} onClick={this.preventClose}></span>
+        <span className='selectedImage' style={imageStyle} onClick={(e) => e.stopPropagation()}></span>
         <InfoPanel />
       </div>
     )
