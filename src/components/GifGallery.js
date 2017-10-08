@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
 import Thumbnail from './Thumbnail';
-import './GifGallery.css';
+import '../styles/GifGallery.css';
 
 class GifGallery extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './InfoPanel.css';
+import '../styles/InfoPanel.css';
 
 class InfoPanel extends Component {
   

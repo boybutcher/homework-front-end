@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InfoPanel from './InfoPanel';
-import './Modal.css';
+import '../styles/Modal.css';
 
 class Modal extends Component {
   constructor(props) {

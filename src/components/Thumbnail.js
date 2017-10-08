@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Thumbnail.css';
+import '../styles/Thumbnail.css';
 
 class Thumbnail extends Component {
   
