@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import Modal from './Modal';
 import Thumbnail from './Thumbnail';
+import './GifGallery.css';
 
 class GifGallery extends Component {
   constructor(props) {
@@ -9,15 +10,24 @@ class GifGallery extends Component {
       gifs: [],
       offset: 0,
       selected: null,
+      modalOpen: false,
     }
 
     this.selectImage = this.selectImage.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.getTrending = this.getTrending.bind(this);
   }
 
   selectImage(index) {
     this.setState({
       selected: index,
+      modalOpen: true,
+    })
+  }
+
+  toggleModal() {
+    this.setState({
+      modalOpen: !this.state.modalOpen,
     })
   }
 
@@ -27,13 +37,13 @@ class GifGallery extends Component {
         response.json()
       ))
       .then(json => {
-        let {
+        const {
           gifs,
           offset,
         } = this.state;
 
-        let updatedGifs = [...gifs].concat(json.data);
-        let nextOffset = offset + 5;
+        const updatedGifs = [...gifs].concat(json.data);
+        const nextOffset = offset + 5;
 
         this.setState({
           gifs: updatedGifs,
@@ -50,23 +60,32 @@ class GifGallery extends Component {
   }
 
   render() {
-    let {
+    const {
       gifs,
+      selected,
+      modalOpen
     } = this.state
 
     return (
       <div className="GifGallery">
+        <Modal
+          modalOpen={modalOpen}
+          selectedImage={gifs[selected]}
+          toggleModal={this.toggleModal}
+        />
+
         <div>
           <button onClick={() => this.getTrending(this.state.offset)}>
             more images
           </button>
         </div>
+
         {gifs.map((gif, index) => (
-          <Thumbnail 
-            gif={gif} 
+          <Thumbnail
+            gif={gif}
             key={index}
             index={index}
-            selectImage={this.selectImage} 
+            selectImage={this.selectImage}
           />
         ))}
       </div>

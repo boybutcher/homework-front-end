@@ -4,6 +4,7 @@
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
   border: 2px solid grey;
   margin: 2px;
   cursor: pointer;
