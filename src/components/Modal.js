@@ -16,8 +16,12 @@ class Modal extends Component {
 
     const modal = (
       <div className='Modal' onClick={() => toggleModal()}>
-        <span className='selectedImage' style={imageStyle} onClick={(e) => e.stopPropagation()}></span>
-        <InfoPanel />
+        <span
+          className='selectedImage'
+          style={imageStyle}
+          onClick={(e) => e.stopPropagation()}>
+        </span>
+        <InfoPanel imageData={selectedImage} />
       </div>
     )
     
