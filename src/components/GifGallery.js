@@ -15,6 +15,8 @@ class GifGallery extends Component {
 
     this.selectImage = this.selectImage.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.nextImage = this.nextImage.bind(this);
+    this.previousImage = this.previousImage.bind(this);
     this.getTrending = this.getTrending.bind(this);
   }
 
@@ -28,6 +30,18 @@ class GifGallery extends Component {
   toggleModal() {
     this.setState({
       modalOpen: !this.state.modalOpen,
+    })
+  }
+
+  nextImage() {
+    this.setState({
+      selected: this.state.selected + 1,
+    })
+  }
+
+  previousImage() {
+    this.setState({
+      selected: this.state.selected - 1,
     })
   }
 
@@ -72,6 +86,8 @@ class GifGallery extends Component {
           modalOpen={modalOpen}
           selectedImage={gifs[selected]}
           toggleModal={this.toggleModal}
+          nextImage={this.nextImage}
+          previousImage={this.previousImage}
         />
 
         <div>

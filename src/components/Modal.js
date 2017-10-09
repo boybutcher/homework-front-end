@@ -3,11 +3,25 @@ import InfoPanel from './InfoPanel';
 import '../styles/Modal.css';
 
 class Modal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.preventBubble = this.preventBubble.bind(this);
+  }
+
+  preventBubble(e, func) {
+    console.log('func: ', func);
+    e.stopPropagation();
+    func();
+  }
+
   render() {
     const {
       modalOpen,
       toggleModal,
-      selectedImage
+      selectedImage,
+      nextImage,
+      previousImage,
     } = this.props;
 
     const imageStyle = selectedImage ? {
@@ -16,6 +30,13 @@ class Modal extends Component {
 
     const modal = (
       <div className='Modal' onClick={() => toggleModal()}>
+        <button onClick={(e) => this.preventBubble(e, previousImage)}>
+          previous
+        </button>
+        <button onClick={(e) => this.preventBubble(e, nextImage)}>
+          next
+        </button>
+
         <span
           className='selectedImage'
           style={imageStyle}
