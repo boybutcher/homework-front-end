@@ -1,0 +1,15 @@
+.selected-image {
+  width: 40%;
+  height: 30%;
+  top: 20%;
+  left: 30%;
+  position: absolute;
+  display: inline-block;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}

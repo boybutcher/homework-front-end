@@ -114,6 +114,7 @@ class GifGallery extends Component {
             selectImage={this.selectImage}
           />
         ))}
+        <div id='bottom'> bottom </div>
       </div>
     );
   }

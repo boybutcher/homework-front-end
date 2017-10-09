@@ -33,7 +33,7 @@ class Thumbnail extends Component {
       <span 
         className='thumbnail' 
         style={thumbnailImage}
-        onClick={() => selectImage(index)}
+        onClick={() => (selectImage(index))}
         onMouseEnter={this.togglePreview}
         onMouseLeave={this.togglePreview}
       >
