@@ -34,14 +34,24 @@ class GifGallery extends Component {
   }
 
   nextImage() {
+    const {
+      gifs,
+      selected,
+    } = this.state;
+    const next = selected + 1 === gifs.length ? 0 : selected + 1;
     this.setState({
-      selected: this.state.selected + 1,
+      selected: next,
     })
   }
 
   previousImage() {
+    const {
+      gifs,
+      selected,
+    } = this.state;
+    const previous = selected - 1 < 0 ? gifs.length - 1 : selected - 1;
     this.setState({
-      selected: this.state.selected - 1,
+      selected: previous,
     })
   }
 
