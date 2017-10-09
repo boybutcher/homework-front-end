@@ -6,8 +6,10 @@
 }
 
 .external-links {
-  margin-top: 22%;
-  margin-left: 40%;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 32%;
 }
 
 .social-media-icon {

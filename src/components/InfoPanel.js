@@ -13,7 +13,6 @@ class InfoPanel extends Component {
         display_name: 'Anonymous User',
         profile_url: null,
       },
-      source_post_url,
       import_datetime,
     } = this.props.imageData;
 

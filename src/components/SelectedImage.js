@@ -6,7 +6,7 @@ class SelectedImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false,
+      modalOpen: true,
     }
     this.toggleModal = this.toggleModal.bind(this);
   }
