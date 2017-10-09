@@ -4,3 +4,16 @@ body {
   font-family: sans-serif;
   background-color: black
 }
+
+a:link {
+  text-decoration: none;
+  color: #e3e3e3;
+}
+
+a:visited {
+  color: #008B8B;
+}
+
+a:hover {
+  text-decoration: underline;
+}

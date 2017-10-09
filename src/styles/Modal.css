@@ -11,14 +11,16 @@
 
 .Modal .selectedImage {
   width: 40%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
+  height: 30%;
+  top: 20%;
+  left: 30%;
   position: absolute;
   display: inline-block;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 9999;
-  border: 2px solid white;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }

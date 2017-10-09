@@ -1,8 +1,43 @@
 .InfoPanel {
-  border: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
   position: absolute;
-  top: 10%;
-  left: 50%;
-  height: 80%;
-  width: 40%;
+  top: 50%;
+  left: 30%;
+  height: 28%;
+  width: 38%;
+  padding: 1%;
+}
+
+.avatar {
+  width: 20%;
+  padding-top: 20%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border-radius: 50%;
+  margin: 2%;
+}
+
+.post-data {
+  vertical-align: top;
+  width: 76%;
+  display: inline-block;
+}
+
+.poster-name {
+  width: 72%;
+  height: 6%;
+  margin: 2%;
+  font-size: x-large;
+  display: inline-block;
+}
+
+.post-date {
+  width: 72%;
+  height: 6%;
+  margin: 2%;
+  display: inline-block;
 }
