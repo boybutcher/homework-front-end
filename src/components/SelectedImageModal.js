@@ -19,25 +19,33 @@ class SelectedImageModal extends Component {
       },
     } = this.props;
 
-    console.log('bitly_url: ', bitly_url);
-    console.log('twitter: ', twitter);
-    console.log('source_post_url: ', source_post_url);
-
     const giphyLink = bitly_url ? (
       <a href={bitly_url} target='_blank'> 
-        <img className='social-media-icon' src={GiphyIcon}/>
+        <img
+          className='social-media-icon'
+          src={GiphyIcon}
+          alt='giphy icon'
+        />
       </a>
     ) : null;
 
     const twitterLink = twitter ? (
       <a href={`https://twitter.com/${twitter}`} target='_blank'> 
-        <img className='social-media-icon' src={TwitterIcon}/>
+        <img
+          className='social-media-icon'
+          src={TwitterIcon}
+          alt='twitter icon'
+        />
       </a>
     ) : null;
 
     const sourceLink = source_post_url ? (
       <a href={source_post_url} target='_blank'> 
-        <img className='social-media-icon' src={SourceIcon}/>
+        <img
+          className='social-media-icon'
+          src={SourceIcon}
+          alt='source icon'
+        />
       </a>  
     ) : null;
 

@@ -1,0 +1,7 @@
+.cycle-button {
+  cursor: pointer;
+}
+
+.cycle-button:hover {
+  color: #008B8B;
+}

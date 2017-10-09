@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
+import Buttons from './Buttons';
 import SelectedImage from './SelectedImage';
 import InfoPanel from './InfoPanel';
 import '../styles/Modal.css';
 
 class Modal extends Component {
-  constructor(props) {
-    super(props);
-    this.preventBubble = this.preventBubble.bind(this);
-  }
-
-  preventBubble(e, func) {
-    e.stopPropagation();
-    func();
-  }
-
   render() {
     const {
       modalOpen,
@@ -25,13 +16,7 @@ class Modal extends Component {
 
     const modal = (
       <div className='modal' onClick={() => toggleModal()}>
-        <button onClick={(e) => this.preventBubble(e, previousImage)}>
-          previous
-        </button>
-        <button onClick={(e) => this.preventBubble(e, nextImage)}>
-          next
-        </button>
-
+        <Buttons previousImage={previousImage} nextImage={nextImage}/>
         <SelectedImage imageData={selectedImage}/>
         <InfoPanel imageData={selectedImage} />
       </div>
