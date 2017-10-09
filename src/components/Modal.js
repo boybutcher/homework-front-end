@@ -10,7 +10,6 @@ class Modal extends Component {
   }
 
   preventBubble(e, func) {
-    console.log('func: ', func);
     e.stopPropagation();
     func();
   }
