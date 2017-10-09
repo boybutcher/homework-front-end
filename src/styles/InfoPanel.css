@@ -11,8 +11,8 @@
 }
 
 .avatar {
-  width: 20%;
-  padding-top: 20%;
+  width: 4rem;
+  height: 4rem;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center center;
@@ -24,6 +24,7 @@
 .post-data {
   vertical-align: top;
   width: 76%;
+  height: 4rem;
   display: inline-block;
 }
 
