@@ -31,7 +31,7 @@ class Thumbnail extends Component {
 
     return (
       <span 
-        className='Thumbnail' 
+        className='thumbnail' 
         style={thumbnailImage}
         onClick={() => selectImage(index)}
         onMouseEnter={this.togglePreview}

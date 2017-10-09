@@ -25,7 +25,7 @@ class InfoPanel extends Component {
     }
 
     return (
-      <div className='InfoPanel' onClick={(e) => e.stopPropagation()}>
+      <div className='info-panel' onClick={(e) => e.stopPropagation()}>
         <span
           className='avatar'
           style={avatarStyle}

@@ -81,7 +81,7 @@ class GifGallery extends Component {
     } = this.state
 
     return (
-      <div className="GifGallery">
+      <div className="gif-gallery">
         <Modal
           modalOpen={modalOpen}
           selectedImage={gifs[selected]}

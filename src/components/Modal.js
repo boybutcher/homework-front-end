@@ -28,7 +28,7 @@ class Modal extends Component {
     } : null;
 
     const modal = (
-      <div className='Modal' onClick={() => toggleModal()}>
+      <div className='modal' onClick={() => toggleModal()}>
         <button onClick={(e) => this.preventBubble(e, previousImage)}>
           previous
         </button>
@@ -37,7 +37,7 @@ class Modal extends Component {
         </button>
 
         <span
-          className='selectedImage'
+          className='selected-image'
           style={imageStyle}
           onClick={(e) => e.stopPropagation()}>
         </span>
