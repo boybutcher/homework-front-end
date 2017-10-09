@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/InfoPanel.css';
-import TwitterIcon from '../assets/twitter-icon.png';
-import GiphyIcon from '../assets/giphy-icon.png';
 
 class InfoPanel extends Component {
   render() {
@@ -10,16 +8,13 @@ class InfoPanel extends Component {
         avatar_url,
         display_name,
         profile_url,
-        twitter,
       } = {
         avatar_url: 'https://i.pinimg.com/236x/64/78/b4/6478b40ee5f7f169b6d25f914ccfcac2--silhouette-viking.jpg',
         display_name: 'Anonymous User',
         profile_url: null,
-        twitter: null,
       },
       source_post_url,
       import_datetime,
-      bitly_url,
     } = this.props.imageData;
 
     const avatarStyle = {
@@ -45,14 +40,6 @@ class InfoPanel extends Component {
             posted on {new Date(import_datetime).toString().split(' ').slice(0, 5).join(' ')}
           </sub>
         </span>
-        <div className='external-links'>
-          <a href={bitly_url} target='_blank'> 
-            <img className='social-media-icon' src={GiphyIcon}/>
-          </a>
-          <a href={twitter} target='_blank'> 
-            <img className='social-media-icon' src={TwitterIcon}/>
-          </a>
-        </div>
       </div>
     )
   }

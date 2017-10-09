@@ -1,0 +1,16 @@
+.selected-image-modal {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+}
+
+.external-links {
+  margin-top: 22%;
+  margin-left: 40%;
+}
+
+.social-media-icon {
+  height: 3rem;
+  margin: 2px;
+}

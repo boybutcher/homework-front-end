@@ -5,7 +5,7 @@
   position: absolute;
   top: 50%;
   left: 30%;
-  height: 28%;
+  height: 12%;
   width: 38%;
   padding: 1%;
 }
@@ -41,9 +41,4 @@
   height: 6%;
   margin: 2%;
   display: inline-block;
-}
-
-.social-media-icon {
-  height: 3rem;
-  margin-right: 5px;
 }

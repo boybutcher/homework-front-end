@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/SelectedImage.css'
+import SelectedImageModal from './SelectedImageModal';
+import '../styles/SelectedImage.css';
 
 class SelectedImage extends Component {
   constructor(props) {
@@ -29,7 +30,13 @@ class SelectedImage extends Component {
       <span
         className='selected-image'
         style={imageStyle}
-        onClick={(e) => e.stopPropagation()}>
+        onClick={(e) => e.stopPropagation()}
+        onMouseEnter={this.toggleModal}
+        onMouseLeave={this.toggleModal}>
+        <SelectedImageModal
+          imageData={imageData}
+          modalOpen={this.state.modalOpen} 
+        />
       </span>  
     )
   }
