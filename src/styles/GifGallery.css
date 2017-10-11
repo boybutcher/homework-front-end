@@ -1,3 +1,13 @@
 .gif-gallery {
+  display: flex;
+  flex-wrap: wrap;
   overflow-y: scroll;
+}
+
+.temp-button {
+  flex: 0 0 100%;
+}
+
+#bottom {
+  flex: 0 0 100%;
 }

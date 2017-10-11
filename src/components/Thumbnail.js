@@ -10,14 +10,14 @@ class Thumbnail extends Component {
     this.togglePreview = this.togglePreview.bind(this);
   }
 
-  togglePreview() {
+  togglePreview(e) {
     this.setState({
       previewing: !this.state.previewing,
     })
   }
 
   render() {
-    let {
+    const {
       gif,
       index,
       selectImage,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Buttons from './Buttons';
+import Button from './Button';
 import SelectedImage from './SelectedImage';
 import InfoPanel from './InfoPanel';
 import '../styles/Modal.css';
@@ -16,8 +16,9 @@ class Modal extends Component {
 
     const modal = (
       <div className='modal' onClick={() => toggleModal()}>
-        <Buttons previousImage={previousImage} nextImage={nextImage}/>
+        <Button previousImage={previousImage} direction={'left'}/>
         <SelectedImage imageData={selectedImage}/>
+        <Button nextImage={nextImage} direction={'right'}/>
         <InfoPanel imageData={selectedImage} />
       </div>
     )

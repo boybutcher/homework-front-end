@@ -22,22 +22,19 @@ class SelectedImage extends Component {
       imageData,
     } = this.props;
 
-    const imageStyle = {
-      backgroundImage: `url('${imageData.images.original.url}')`
-    };
-
     return (
-      <span
+      <div
         className='selected-image'
-        style={imageStyle}
         onClick={(e) => e.stopPropagation()}
         onMouseEnter={this.toggleModal}
-        onMouseLeave={this.toggleModal}>
+        onMouseLeave={this.toggleModal}
+      >
         <SelectedImageModal
           imageData={imageData}
           modalOpen={this.state.modalOpen} 
         />
-      </span>  
+        <img className='displayed' src={imageData.images.original.url} />
+      </div>
     )
   }
 }

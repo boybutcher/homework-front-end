@@ -100,7 +100,7 @@ class GifGallery extends Component {
           previousImage={this.previousImage}
         />
 
-        <div>
+        <div className='temp-button'>
           <button onClick={() => this.getTrending(this.state.offset)}>
             more images
           </button>

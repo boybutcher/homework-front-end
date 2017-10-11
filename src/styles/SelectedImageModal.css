@@ -1,18 +1,26 @@
 .selected-image-modal {
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: inline-block;
+  background: rgba(227, 227, 227, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .external-links {
-  position: relative;
-  transform: translateY(-50%);
-  top: 50%;
-  left: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-media-icon {
-  height: 3rem;
+  height: 100px;
+  width: auto;
   margin: 2px;
 }

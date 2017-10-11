@@ -1,0 +1,16 @@
+.cycle-button {
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.cycle-button:hover {
+  color: #008B8B;
+}
+
+.cycle-button.left {
+  order: 1;
+}
+
+.cycle-button.right {
+  order: 3;
+}

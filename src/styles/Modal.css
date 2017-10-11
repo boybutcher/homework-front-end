@@ -4,7 +4,10 @@
   top: 0px;
   left: 0px;
   position: fixed;
-  z-index: 9998;
   background: rgba(0, 0, 0, 0.85);
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
