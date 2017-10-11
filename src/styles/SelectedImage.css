@@ -3,13 +3,20 @@
   border-top: 2px solid white;
   border-left: 2px solid white;
   border-right: 2px solid white;
-  opacity: 1;
-  order: 2;
+  background: rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.selected-image.displayed {
+.selected-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  order: 2;
+}
+
+.selected-image .displayed {
   width: 100%;
 }
