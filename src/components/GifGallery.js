@@ -11,6 +11,7 @@ class GifGallery extends Component {
       offset: 0,
       selected: null,
       modalOpen: false,
+      isLoading: false,
     }
 
     this.selectImage = this.selectImage.bind(this);
@@ -57,8 +58,16 @@ class GifGallery extends Component {
   }
 
   scrollHandler() {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 250)) {
-      console.log('should be fetching...');
+    const {
+      offset,
+      isLoading,
+    } = this.state;
+
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500) && !isLoading) {
+      this.setState({
+        isLoading: true,
+      })
+      this.getTrending(offset);
     }
   }
 
@@ -79,16 +88,19 @@ class GifGallery extends Component {
         this.setState({
           gifs: updatedGifs,
           offset: nextOffset,
+          isLoading: false,
         });
       })
       .catch(error => {
         console.error('error: ', error);
+        this.setState({
+          isLoading: false,
+        })
       }) 
   }
 
   componentDidMount() {
     this.getTrending(this.state.offset);
-    this.scrollHandler();
     window.addEventListener('scroll', this.scrollHandler, false);
   }
 
@@ -100,10 +112,11 @@ class GifGallery extends Component {
     const {
       gifs,
       selected,
-      modalOpen
+      offset,
+      modalOpen,
     } = this.state
 
-    document.body.style.overflow = this.state.modalOpen ? 'hidden' : 'visible';
+    document.body.style.overflow = modalOpen ? 'hidden' : 'visible';
 
     return (
       <div 
@@ -118,7 +131,7 @@ class GifGallery extends Component {
         />
 
         <div className='temp-button'>
-          <button onClick={() => this.getTrending(this.state.offset)}>
+          <button onClick={() => this.getTrending(offset)}>
             more images
           </button>
         </div>
@@ -131,7 +144,6 @@ class GifGallery extends Component {
             selectImage={this.selectImage}
           />
         ))}
-        <div id='bottom'> bottom </div>
       </div>
     );
   }
