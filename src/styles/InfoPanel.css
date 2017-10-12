@@ -4,8 +4,7 @@
   border-bottom: 2px solid white;
   background: rgba(0, 0, 0, 1);
   order: 4;
-  flex: 0 0 50%;
-  height: auto;
+  width: 50%;
 }
 
 .avatar {
@@ -17,6 +16,7 @@
   background-size: contain;
   border-radius: 50%;
   margin: 2%;
+  margin-left: 5%;
 }
 
 .post-data {
@@ -35,7 +35,7 @@
 }
 
 .post-date {
-  width: 72%;
+  width: auto;
   height: 6%;
   margin: 2%;
   display: inline-block;
