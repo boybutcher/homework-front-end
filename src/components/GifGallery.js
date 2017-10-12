@@ -17,6 +17,7 @@ class GifGallery extends Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.nextImage = this.nextImage.bind(this);
     this.previousImage = this.previousImage.bind(this);
+    this.scrollHandler = this.scrollHandler.bind(this);
     this.getTrending = this.getTrending.bind(this);
   }
 
@@ -55,6 +56,12 @@ class GifGallery extends Component {
     })
   }
 
+  scrollHandler() {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 250)) {
+      console.log('should be fetching...');
+    }
+  }
+
   getTrending(offset = 0) {
     fetch(`http://api.giphy.com/v1/gifs/trending?api_key=ErgAmxc7tbRDVkRNPuvIuLoNd3mJWW3B&limit=5&offset=${offset}`)
       .then(response => (
@@ -81,6 +88,12 @@ class GifGallery extends Component {
 
   componentDidMount() {
     this.getTrending(this.state.offset);
+    this.scrollHandler();
+    window.addEventListener('scroll', this.scrollHandler, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollHandler, false); 
   }
 
   render() {
@@ -90,8 +103,12 @@ class GifGallery extends Component {
       modalOpen
     } = this.state
 
+    document.body.style.overflow = this.state.modalOpen ? 'hidden' : 'visible';
+
     return (
-      <div className="gif-gallery">
+      <div 
+        className="gif-gallery"
+      >
         <Modal
           modalOpen={modalOpen}
           selectedImage={gifs[selected]}
