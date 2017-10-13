@@ -25,7 +25,7 @@ Highlighting the image in the modal allows you to view a number of source links 
 
 ## Planned Updates
 
-- [ ] allow searches at different end points ([search](https://developers.giphy.com/docs/#operation--gifs-search-get)/[random(https://developers.giphy.com/docs/#operation--gifs-random-get)])
+- [ ] allow searches at different end points ([search](https://developers.giphy.com/docs/#operation--gifs-search-get)/[random](https://developers.giphy.com/docs/#operation--gifs-random-get))
 - [ ] favoriting images persistently, storing favorites via localStorage
 - [ ] store more post data in the modal
 - [ ] general styling
