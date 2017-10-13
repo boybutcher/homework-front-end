@@ -19,6 +19,7 @@ class SelectedImageModal extends Component {
       },
     } = this.props;
 
+    // if related link exists, create an icon to represent it
     const giphyLink = bitly_url ? (
       <a href={bitly_url} target='_blank'> 
         <img
@@ -61,6 +62,7 @@ class SelectedImageModal extends Component {
       </div>
     )
 
+    //conditionally return modal only if its open
     return modalOpen ? modal : null;
   }
 }
