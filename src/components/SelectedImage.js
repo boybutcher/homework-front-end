@@ -12,6 +12,7 @@ class SelectedImage extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
+  //for image modal
   toggleModal() {
     this.setState({
       modalOpen: !this.state.modalOpen,

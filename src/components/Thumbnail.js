@@ -23,6 +23,7 @@ class Thumbnail extends Component {
       selectImage,
     } = this.props;
 
+    //when hovering over a thumbnail, render preview gif, else, render a still of the gif
     let thumbnailImage = this.state.previewing ? {
       backgroundImage: `url('${gif.images.preview_gif.url}')`,
     } : {

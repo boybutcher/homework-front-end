@@ -24,6 +24,7 @@ class Modal extends Component {
       </div>
     )
     
+    //conditional rendering of whole modal component and children
     return modalOpen && selectedImage ? modal : null;
   }
 }

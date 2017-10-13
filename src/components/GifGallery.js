@@ -23,6 +23,7 @@ class GifGallery extends Component {
     this.getTrending = this.getTrending.bind(this);
   }
 
+  //selects image & opens modal
   selectImage(index) {
     this.setState({
       selected: index,
@@ -30,12 +31,14 @@ class GifGallery extends Component {
     })
   }
 
+  //allows switching modal open/close
   toggleModal() {
     this.setState({
       modalOpen: !this.state.modalOpen,
     })
   }
 
+  //when modal is open, lets you cycle through array of gifs within state, when reaches end, goes back to first index
   nextImage() {
     const {
       gifs,
@@ -47,6 +50,7 @@ class GifGallery extends Component {
     })
   }
 
+  //works the same as nextImage
   previousImage() {
     const {
       gifs,
@@ -58,6 +62,7 @@ class GifGallery extends Component {
     })
   }
 
+  //when using a scroll action, will check to see if the bottom part of the body is within the viewport and grab more items if it is
   scrollHandler() {
     const {
       offset,
@@ -71,10 +76,12 @@ class GifGallery extends Component {
     }
   }
 
+  //returns a boolean value to see if enough of the bottom of the body is within the viewport
   fetchCheck() {
     return (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 50) && !this.state.isLoading;
   }
 
+  //grabs 25 gifs at a time from the Giphy API
   getTrending(offset = 0) {
     fetch(`http://api.giphy.com/v1/gifs/trending?api_key=ErgAmxc7tbRDVkRNPuvIuLoNd3mJWW3B&limit=25&offset=${offset}`)
       .then(response => (
@@ -86,9 +93,11 @@ class GifGallery extends Component {
           offset,
         } = this.state;
 
+        // add gifs to state, increase the offset by 25 to know where to pick up from on next request
         const updatedGifs = [...gifs].concat(json.data);
         const nextOffset = offset + 25;
 
+        //after setting state, if the body doesnt take up the viewport, keep grabbing trending
         this.setState({
           gifs: updatedGifs,
           offset: nextOffset,
@@ -123,6 +132,7 @@ class GifGallery extends Component {
       modalOpen,
     } = this.state
 
+    // disable scrolling if modal is open
     document.body.style.overflow = modalOpen ? 'hidden' : 'visible';
 
     return (
