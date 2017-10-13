@@ -1,7 +1,7 @@
 # Eaze Front-End Homework
 ### Developed by [Bryan Nguyen](https://www.linkedin.com/in/bqnguyen1/)
 
-A Giphy([docs](https://developers.giphy.com/docs/)) image gallery
+A light-weight, client-side Giphy([docs](https://developers.giphy.com/docs/)) image gallery
 
 ## Getting Started
 
