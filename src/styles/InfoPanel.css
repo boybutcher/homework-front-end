@@ -5,6 +5,8 @@
   background: rgba(0, 0, 0, 1);
   order: 4;
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .avatar {

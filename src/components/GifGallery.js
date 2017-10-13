@@ -19,6 +19,7 @@ class GifGallery extends Component {
     this.nextImage = this.nextImage.bind(this);
     this.previousImage = this.previousImage.bind(this);
     this.scrollHandler = this.scrollHandler.bind(this);
+    this.fetchCheck = this.fetchCheck.bind(this);
     this.getTrending = this.getTrending.bind(this);
   }
 
@@ -60,10 +61,9 @@ class GifGallery extends Component {
   scrollHandler() {
     const {
       offset,
-      isLoading,
     } = this.state;
 
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500) && !isLoading) {
+    if (this.fetchCheck()) {
       this.setState({
         isLoading: true,
       })
@@ -71,8 +71,12 @@ class GifGallery extends Component {
     }
   }
 
+  fetchCheck() {
+    return (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 50) && !this.state.isLoading;
+  }
+
   getTrending(offset = 0) {
-    fetch(`http://api.giphy.com/v1/gifs/trending?api_key=ErgAmxc7tbRDVkRNPuvIuLoNd3mJWW3B&limit=5&offset=${offset}`)
+    fetch(`http://api.giphy.com/v1/gifs/trending?api_key=ErgAmxc7tbRDVkRNPuvIuLoNd3mJWW3B&limit=25&offset=${offset}`)
       .then(response => (
         response.json()
       ))
@@ -83,12 +87,16 @@ class GifGallery extends Component {
         } = this.state;
 
         const updatedGifs = [...gifs].concat(json.data);
-        const nextOffset = offset + 5;
+        const nextOffset = offset + 25;
 
         this.setState({
           gifs: updatedGifs,
           offset: nextOffset,
           isLoading: false,
+        }, () => {
+          if (this.fetchCheck()) {
+            this.getTrending(this.state.offset);
+          }
         });
       })
       .catch(error => {
@@ -112,16 +120,13 @@ class GifGallery extends Component {
     const {
       gifs,
       selected,
-      offset,
       modalOpen,
     } = this.state
 
     document.body.style.overflow = modalOpen ? 'hidden' : 'visible';
 
     return (
-      <div 
-        className="gif-gallery"
-      >
+      <div className="gif-gallery">
         <Modal
           modalOpen={modalOpen}
           selectedImage={gifs[selected]}
@@ -129,13 +134,6 @@ class GifGallery extends Component {
           nextImage={this.nextImage}
           previousImage={this.previousImage}
         />
-
-        <div className='temp-button'>
-          <button onClick={() => this.getTrending(offset)}>
-            more images
-          </button>
-        </div>
-
         {gifs.map((gif, index) => (
           <Thumbnail
             gif={gif}
