@@ -1,45 +1,37 @@
-# Eaze Front End Homework
+# Eaze Front-End Homework
+### Developed by [Bryan Nguyen](https://www.linkedin.com/in/bqnguyen1/)
 
-Our Front End code challenge for engineering applicants
+A Giphy([docs](https://developers.giphy.com/docs/)) image gallery
 
-## Project
+## Getting Started
 
-We would like you to build a web app that displays the trending GIFs on [Giphy](https://giphy.com/). 
-Users visiting the website should be able to search for GIFs and see a list of results. The user should be able to expand a GIF and see its details (username, rating, anything you think could be relevant).
+```sh
+git clone https://github.com/boybutcher/homework-front-end.git
+cd homework-front-end
 
-Users should have a good user experience on desktop, tablet and mobile devices.
+npm install
+npm start
+```
 
-This project is pretty open ended in order to leave you some freedom to improve upon the base by focusing on what you like the most.
+## Usage Guide (as of 9/15/2017)
 
-We strongly encourage you to pick a couple of optional improvements. The following are just some ideas, so if none of these interest you, feel free to do something that isn’t on this list:
+Upon launch, the app will grab the top 25 trending GIFs from the Giphy API.
 
-- When the user scrolls the page to the bottom, load new GIFs automatically.
-- Create a mosaic layout and display a placeholder when GIFs are still loading.
-- Show off your animation skills!
-- Sort the results by uploaded time and let the user choose if they prefer ascending or descending ordering.
-- Let the user favorite GIFs and list their favorites. The users should be able to retrieve their favorite GIFs even after refreshing the page.
-- Provide the ultimate user experience: scrolling, searching, fetching… could be optimized for UX.
-- Let the user upload a GIF.
-- Add some unit tests.
+If the body doesn't fill the viewport, it will continue to fetch. When scrolled to the bottom of the body, the app will automatically fetch more GIFs in batches of 25 items.
 
+When hovering on a thumbnail, it will show a low resolution preview of the GIF. Clicking opens a modal which shows the original GIF, user meta data, and the upload date/time.
 
-### Project Structure
+Highlighting the image in the modal allows you to view a number of source links if that is shared.
 
-We've included all of the boilerplate to get started with this project using [create-react-app](https://github.com/facebookincubator/create-react-app), feel free to use this structure if you'd like. If you'd prefer to use something other than React or you'd prefer a different project structure, go ahead and make any changes you'd like.
+## Planned Updates
 
-### Evaluation
+- [ ] allow searches at different end points ([search](https://developers.giphy.com/docs/#operation--gifs-search-get)/[random(https://developers.giphy.com/docs/#operation--gifs-random-get)])
+- [ ] favoriting images persistently, storing favorites via localStorage
+- [ ] store more post data in the modal
+- [ ] general styling
 
-The app should run on any computer by running `npm install` and `npm start`.
-We’ll evaluate the exercise by looking at the end result and the code.
+## Stack
 
-### Coding at Eaze
-
-At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
-
-We prefer simplicity and over complexity.
-
-We comment our code and commit often.
-
-We love our users and we really care about providing a good user experience and pleasant UI.
-
-We encourage out of the box thinking and we love to be impressed!
+- Client
+  - React via create-react-app
+  - Requests via Fetch API

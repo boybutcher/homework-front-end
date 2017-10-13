@@ -41,7 +41,7 @@ class SelectedImage extends Component {
             imageData={imageData}
             modalOpen={this.state.modalOpen} 
           />
-          <img className='displayed' src={imageData.images.original.url} />
+          <img className='displayed' role='presentation' src={imageData.images.original.url} />
         </div>
         <Button nextImage={nextImage} direction={'right'}/>
       </div>
